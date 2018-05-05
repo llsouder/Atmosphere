@@ -7,5 +7,9 @@ Calculations for standandard temperature and density.
 
 formulas here:
 https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html
+
 test data here:
-http://meteorologytraining.tpub.com/14269/css/14269_75.htm
+https://www.engineeringtoolbox.com/international-standard-atmosphere-d_985.html
+
+geopotential to geometric
+http://www.pdas.com/geopot.pdf
