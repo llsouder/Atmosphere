@@ -1,6 +1,7 @@
 (ns atmosphere.core-test
   (:require [clojure.test :refer :all]
             [atmosphere.core :refer :all]
+            [atmosphere.convert :refer :all]
             [atmosphere.standard :as std]))
 
 (defn difference ^double [^double x ^double y]
@@ -26,7 +27,13 @@
   (testing "Calculating standard temperature calculation."
     (is (close? 0.1 15.0 (std/temperature 0)))
     (is (close? 0.1 -4.8 (std/temperature (f-to-m 10000))))
+    (is (close? 0.1 -56.46 (std/temperature 11000)))
+    (is (close? 0.1 -56.46 (std/temperature 25000)))
     (is (close? 0.1 -24.6 (std/temperature (f-to-m 20000))))))
+
+(deftest convert-mach-to-true-test
+  (testing "Calculating true from mach and altitude."
+    (is (close? 0.1 -447.38 (mach-to-true 0.78 13000)))))
 
 (deftest exceptions
   (testing "The individual atmosphere calls should throw."

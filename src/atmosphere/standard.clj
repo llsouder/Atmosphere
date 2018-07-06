@@ -5,7 +5,9 @@
   Results are within .1 of the data
   found on http://meteorologytraining.tpub.com/14269/css/14269_75.htm."
   [h]
-  (- 15.04 (* 0.00649 h)))
+  (cond
+    (< h 11000) (- 15.04 (* 0.00649 h))
+    :else -56.46))
 
 (defn troposphere
   "Calculate standard pressure in kPa for the troposphere.

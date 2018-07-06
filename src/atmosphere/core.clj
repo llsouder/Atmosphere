@@ -10,3 +10,8 @@
   "Convert from feet to meters."
   [f]
   (* f 0.3048))
+
+(defn c-to-k
+  "Convert from celsius to kelvin."
+  [c]
+  (+ c 273.15))
